@@ -1,0 +1,45 @@
+package sample;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+import java.io.IOException;
+
+public class SceneOneController   {
+    @FXML private Label processNumber;
+    @FXML private TextField process;
+    @FXML private Button next;
+    protected static int processNo;
+
+    @FXML public void changeNextButtonPushed() throws IOException{
+        boolean valid=true;
+        try{
+            processNo=Integer.parseInt(process.getText());
+        }catch (NumberFormatException e){valid=false;}
+        if(valid){
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("SceneTwo.fxml"));
+            Parent tableViewParent = loader.load();
+            Scene tableViewScene = new Scene(tableViewParent);
+            SceneTwoController controller = loader.getController();
+            Stage window = (Stage) next.getScene().getWindow();
+
+            window.setScene(tableViewScene);
+            window.show();
+        }
+       else{
+            AlertBox.display("Alert", "Enter a valid integer");
+            process.clear();
+        }
+    }
+    @FXML
+    public void initialize() {
+        //initialize the field you want here.
+    }
+
+}

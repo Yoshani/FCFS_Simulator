@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="420.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SceneThreeController">
+   <children>
+      <ImageView fitHeight="434.0" fitWidth="746.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="file:/C:/Users/Yoshi/Downloads/IssueTrackingLite/FCFS_Simulator/foo.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tableView" layoutY="-3.0" prefHeight="420.0" prefWidth="452.0" stylesheets="@ganttchart.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="processNameColumn" prefWidth="75.0" sortable="false" text="Process" />
+            <TableColumn fx:id="arrivalTimeColumn" prefWidth="75.0" sortable="false" text="AT" />
+            <TableColumn fx:id="burstTimeColumn" prefWidth="75.0" sortable="false" text="BT" />
+            <TableColumn fx:id="colorColumn" prefWidth="75.0" sortable="false" text="Colour" />
+            <TableColumn fx:id="waitTimeColumn" prefWidth="75.0" sortable="false" text="WT" />
+            <TableColumn fx:id="turnaroundTimeColumn" prefWidth="75.0" sortable="false" text="TAT" />
+        </columns>
+      </TableView>
+      <Label layoutX="481.0" layoutY="149.0" text="Average Waiting Time :" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelwt" layoutX="671.0" layoutY="141.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font></Label>
+      <Label layoutX="481.0" layoutY="187.0" text="Average Turnaround Time :" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labeltat" layoutX="671.0" layoutY="179.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font></Label>
+      <Button fx:id="gantt" layoutX="481.0" layoutY="251.0" mnemonicParsing="false" onAction="#ganttButtonPressed" text="Generate Gantt Chart">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="482.0" layoutY="31.0" text="FCFS Scheduling">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop color="#eb0118" />
+                  <Stop color="#eb0118" offset="0.6206896551724136" />
+                  <Stop color="#eedede" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="backButton" layoutX="675.0" layoutY="381.0" mnemonicParsing="false" onAction="#backButtonPushed" text="Back" />
+   </children>
+</AnchorPane>
